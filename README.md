@@ -23,4 +23,3 @@ Files of interest:
 - backend/templates/index.html: minimal UI
 - backend/tests/test_api.py: basic tests
 
-Enjoy exploring and tell me if you want a full React frontend, PostgreSQL wiring, or Docker/Kubernetes manifests.
