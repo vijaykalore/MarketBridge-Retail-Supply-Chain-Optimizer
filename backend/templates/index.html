@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>MarketBridge - Prototype Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+  </head>
+  <body>
+    <div class="container">
+    <div class="header">
+      <div class="brand">
+        <div class="logo">MB</div>
+        <div>
+          <h1 style="margin:0">MarketBridge</h1>
+          <div class="small">Prototype Dashboard</div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="small">Local prototype</div>
+      </div>
+    </div>
+    <h2>Inventory</h2>
+
+    <div style="display:flex; gap:24px; margin-bottom:20px">
+      <div>
+        <h3>Create product</h3>
+        <form id="product-form">
+          <input name="name" placeholder="name" required />
+          <input name="sku" placeholder="sku" />
+          <input name="category" placeholder="category" />
+          <button type="submit">Create product</button>
+        </form>
+        <div id="product-msg"></div>
+      </div>
+
+      <div>
+        <h3>Create inventory</h3>
+        <form id="inventory-form">
+          <select name="product_id" id="product-select"></select>
+          <input name="location_id" placeholder="location" value="WH-1" required />
+          <input name="quantity" type="number" value="1" required />
+          <button type="submit">Add inventory</button>
+        </form>
+        <div id="inventory-msg"></div>
+      </div>
+
+      <div>
+        <h3>Utilities</h3>
+        <button id="refresh">Refresh inventory</button>
+        <button id="export-csv">Export CSV</button>
+      </div>
+    </div>
+
+    <table id="inventory-table">
+      <thead><tr><th>ID</th><th>Product</th><th>Location</th><th>Quantity</th><th>Last Updated</th><th>Actions</th></tr></thead>
+      <tbody>
+      </tbody>
+    </table>
+    <p>APIs: <a href="/api/inventory">/api/inventory</a>, <a href="/api/products">/api/products</a>, POST /api/product, POST /api/inventory, GET /api/predict/{product_id}</p>
+
+  </div>
+  <script type="module" src="/static/js/app.js"></script>
+  </div>
+  </body>
+</html>
